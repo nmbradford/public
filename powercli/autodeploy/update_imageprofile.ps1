@@ -199,7 +199,7 @@ switch -regex ($response) {
 				#List/Select profiles
 				$depothash = @{}
 				$i = 0
-				get-esxsoftwaredepot | % { $depothash.Add("$i", $($_.ChannelId)); $i++}
+				get-esxsoftwaredepot | % { $depothash.Add("$i", $($_.DepotURL)); $i++}
 				$depothash.Add("x", "Exit")
 				$response = out-menu $depothash "Current Software Depots" "Hit the 'any key' to exit. ;)"
 
